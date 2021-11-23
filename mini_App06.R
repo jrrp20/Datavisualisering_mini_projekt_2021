@@ -65,18 +65,26 @@ server <- function(input,output,session) {
   #observeEvent(location(), {})
   
   output$graph1 <- renderPlot({
-    location() %>% ggplot(aes_(x=as.name("date"), y=as.name(input$y_var))) +
-      geom_point() +
-      labs(x = 'Date',y = as.name(input$y_var)) 
+    location() %>% ggplot(aes(x=date)) + 
+      geom_ribbon(aes(ymin = record_min_temp, ymax = record_max_temp),
+                  fill = "grey", alpha = .4)+ labs(x = "Date", y = "Temperature") +
+      geom_ribbon(aes(ymin = average_min_temp, ymax = average_max_temp),
+                  fill = "grey", alpha = .8)+ labs(x = "Date", y = "Temperature") +
+      geom_ribbon(aes(ymin = actual_min_temp, ymax = actual_max_temp),
+                  fill = "black", alpha = 0.6)+ labs(x = "Date", y = "Temperature") 
     #+ scale_x_date(breaks = "2 month")
   
     })
     
   output$graph2 <- renderPlot({
-      location() %>% ggplot(aes_(x=as.name("date"), y=as.name(input$y_var))) +  
-      geom_point() +
-             labs(x = 'Date',y = as.name(input$y_var)) +
-              coord_cartesian(xlim = ranges2$x, ylim = ranges2$y)
+    location() %>% ggplot(aes_(x=as.name("date"))) +
+      geom_ribbon(aes(ymin = record_min_temp, ymax = record_max_temp),
+                  fill = "grey", alpha = .4)+ labs(x = "Date", y = "Temperature") +
+      geom_ribbon(aes(ymin = average_min_temp, ymax = average_max_temp),
+                  fill = "grey", alpha = .8)+ labs(x = "Date", y = "Temperature") +
+      geom_ribbon(aes(ymin = actual_min_temp, ymax = actual_max_temp),
+                  fill = "black", alpha = 0.6)+ labs(x = "Date", y = "Temperature") +
+      coord_cartesian(xlim = ranges2$x, ylim = ranges2$y)
   })
   observe({
     brush <- input$plot1_brush
