@@ -4,19 +4,19 @@ library(shiny)
 library(ggplot2)
 #library(shinyWidgets)
 
-setwd("C:/Users/ramme/Downloads")
-# ny_weather <- read_csv("KNYC.csv")
-# library(vroom)
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+ny_weather <- read_csv("us/KNYC.csv")
+library(vroom)
 # 
-# dir.create("us")
+#dir.create("us")
 # 
-# download <- function(name) {
-#   url <- "https://github.com/fivethirtyeight/data/raw/master/us-weather-history/"
-#   download.file(paste0(url, name), paste0("us/",name), quiet = TRUE)
-# }
-# download("KNYC.csv")
-# download("KPHX.csv")
-# download("KSEA.csv")
+#download <- function(name) {
+#url <- "https://github.com/fivethirtyeight/data/raw/master/us-weather-history/"
+#download.file(paste0(url, name), paste0("us/",name), quiet = TRUE)
+#}
+#download("KNYC.csv")
+#download("KPHX.csv")
+#download("KSEA.csv")
 
 nyc <- vroom::vroom("us/KNYC.csv")
 phx <- vroom::vroom("us/KPHX.csv")
