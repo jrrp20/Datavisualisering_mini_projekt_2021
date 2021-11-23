@@ -1,7 +1,7 @@
 library(tidyverse)
 library(readxl)
 library(shiny)
-library(ggplot2)
+#library(ggplot2)
 #library(shinyWidgets)
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
