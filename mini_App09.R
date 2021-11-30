@@ -33,8 +33,7 @@ sea$date <- as.Date(sea$date, format = "%Y-%m-%d")
 ui <- fluidRow(
           column(6, selectInput("city", label = "City:", choices = c("New York","Phoenix","Seattle")), selected = "nyc"),
       # Select variable for y-axis
-          column(6,selectInput("y_var", label = "Dependent variable:",choices = c("average_max_temp","record_min_temp", "record_max_temp"),selected = "record_max_temp"),
-    ),
+          
       #mainPanel(
         #fluidRow(
           column(width = 8, class = "well",
