@@ -45,7 +45,7 @@ ui <- fluidRow(
       #mainPanel(
         #fluidRow(
           column(width = 8, class = "well",
-           HTML("<strong>Explanation:</strong> <br>Below are shown the temperatures during a year in a selected city. <br> The outer lightgrey band shows the record temperature on a particular day since 1880. <br> The middle steelgrey band shows the average min and max temperatures since 1880. <br> The black band shows the actual min and max temperatures for that day. <br><br> <strong> Instructions: </strong> <br>Use the dropdown menu to select a city to investigate. <br>  You can then click and drag on the top graph, to zoom in on the selected area in the bottom graph. <br> <br>"),
+           HTML("<strong>Explanation:</strong> <br>Below are shown the temperatures during a year in a selected city. <br> The outer lightgrey band shows the record temperature on a particular day since 1880. <br> The middle steelgrey band shows the average min and max temperatures since 1880. <br> The black band shows the actual min and max temperatures for that day. <br> A dot will indicate that a record was achieved that year. <br><br> <strong> Instructions: </strong> <br>Use the dropdown menu to select a city to investigate. <br>  You can then click and drag on the top graph, to zoom in on the selected area in the bottom graph. <br> <br>"),
            ),
            column(width = 1, selectInput("city", label = HTML("<strong>Select city:</strong>"), choices = c("New York","Phoenix","Seattle","Indianapolis","Houston")), selected = "nyc"),
            fluidRow(
