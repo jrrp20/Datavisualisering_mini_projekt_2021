@@ -1,4 +1,8 @@
 library(tidyverse)
+install.packages("tidyverse")
+install.packages("readxl")
+install.packages("shiny")
+install.packages("ggplot2")
 library(readxl)
 library(shiny)
 library(ggplot2)
